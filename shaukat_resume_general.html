@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaukat Ali - Resume</title>
+    <style>
+        @page {
+            margin: 0.3in;
+            size: letter;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 10pt 12pt;
+            margin-bottom: 10pt;
+            border-bottom: 3pt solid #2c5aa0;
+            background: #ffffff;
+            page-break-after: avoid;
+        }
+        
+        .header h1 {
+            font-size: 20pt;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 4pt;
+            letter-spacing: 0.8pt;
+            text-transform: uppercase;
+        }
+        
+        .header .title {
+            font-size: 10pt;
+            color: #2c5aa0;
+            font-weight: 600;
+            margin-bottom: 5pt;
+            letter-spacing: 0.2pt;
+        }
+        
+        .contact-info {
+            font-size: 8.5pt;
+            color: #333333;
+            line-height: 1.4;
+        }
+        
+        .contact-info strong {
+            color: #000000;
+            font-weight: 600;
+        }
+        
+        .contact-info a {
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-info span {
+            margin: 0 8pt;
+        }
+        
+        .section {
+            margin-bottom: 8pt;
+            orphans: 2;
+            widows: 2;
+        }
+        
+        .section-title {
+            font-size: 10.5pt;
+            font-weight: bold;
+            color: #2c5aa0;
+            text-transform: uppercase;
+            border-bottom: 2pt solid #2c5aa0;
+            padding-bottom: 2pt;
+            margin-bottom: 6pt;
+            letter-spacing: 0.7pt;
+            page-break-after: avoid;
+        }
+        
+        .summary {
+            text-align: justify;
+            font-size: 9.5pt;
+            line-height: 1.35;
+            color: #444;
+        }
+        
+        .experience-item {
+            margin-bottom: 12pt;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            orphans: 2;
+            widows: 2;
+        }
+        
+        .job-header {
+            margin-bottom: 8pt;
+            padding-bottom: 6pt;
+            border-bottom: 1pt solid #e0e0e0;
+            page-break-after: avoid;
+        }
+        
+        .job-title {
+            font-size: 11.5pt;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        
+        .company {
+            font-size: 10.5pt;
+            color: #2c5aa0;
+            font-weight: 600;
+            margin-top: 3pt;
+        }
+        
+        .job-meta {
+            font-size: 9.5pt;
+            color: #666;
+            font-style: italic;
+            margin-top: 2pt;
+        }
+        
+        .responsibilities {
+            margin-top: 6pt;
+        }
+        
+        .responsibilities ul {
+            margin-left: 16pt;
+            list-style-type: disc;
+        }
+        
+        .responsibilities li {
+            margin-bottom: 3pt;
+            padding-left: 4pt;
+            text-align: justify;
+            orphans: 2;
+            widows: 2;
+        }
+        
+        .responsibilities li strong {
+            color: #2c5aa0;
+            font-weight: 600;
+        }
+        
+        .project-item {
+            margin-bottom: 10pt;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            padding: 10pt;
+            border: 1pt solid #e0e0e0;
+            border-left: 3pt solid #2c5aa0;
+            background: #fafafa;
+            orphans: 2;
+            widows: 2;
+        }
+        
+        .project-title {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #1a1a1a;
+            page-break-after: avoid;
+        }
+        
+        .project-meta {
+            font-size: 9.5pt;
+            color: #666;
+            margin-top: 2pt;
+            page-break-after: avoid;
+        }
+        
+        .project-tech {
+            font-size: 9.5pt;
+            color: #2c5aa0;
+            font-weight: 600;
+            margin-top: 3pt;
+            page-break-after: avoid;
+        }
+        
+        .project-desc {
+            margin-top: 4pt;
+            text-align: justify;
+        }
+        
+        .project-desc ul {
+            margin-left: 16pt;
+            margin-top: 4pt;
+            list-style-type: circle;
+        }
+        
+        .project-desc li {
+            margin-bottom: 2pt;
+            orphans: 2;
+            widows: 2;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8pt 12pt;
+            margin-top: 8pt;
+            page-break-inside: avoid;
+        }
+        
+        .skill-category {
+            margin-bottom: 6pt;
+            page-break-inside: avoid;
+        }
+        
+        .skill-category-title {
+            font-weight: bold;
+            color: #2c5aa0;
+            font-size: 10pt;
+            margin-bottom: 3pt;
+        }
+        
+        .skill-list {
+            font-size: 9.5pt;
+            color: #444;
+            line-height: 1.4;
+        }
+        
+        .education-item {
+            margin-bottom: 8pt;
+            page-break-inside: avoid;
+        }
+        
+        .degree {
+            font-weight: bold;
+            font-size: 10.5pt;
+            color: #1a1a1a;
+        }
+        
+        .university {
+            font-size: 10pt;
+            color: #666;
+            margin-top: 2pt;
+        }
+        
+        .highlight {
+            background: #e8f4f8;
+            padding: 2pt 5pt;
+            border-radius: 2pt;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            @page {
+                margin: 0.3in;
+            }
+            
+            @page:first {
+                margin: 0.3in;
+            }
+            
+            body {
+                padding: 0.2in;
+                margin: 0;
+                font-size: 9pt;
+            }
+            
+            .header {
+                padding: 8pt 10pt;
+                margin-bottom: 6pt;
+                page-break-after: avoid;
+            }
+            
+            .header h1 {
+                font-size: 18pt;
+                margin-bottom: 3pt;
+            }
+            
+            .header .title {
+                font-size: 9.5pt;
+                margin-bottom: 3pt;
+            }
+            
+            .contact-info {
+                font-size: 8pt;
+                line-height: 1.35;
+            }
+            
+            .section {
+                margin-bottom: 6pt;
+            }
+            
+            .section-title {
+                font-size: 9.5pt;
+                padding-bottom: 2pt;
+                margin-bottom: 5pt;
+                page-break-after: avoid;
+            }
+            
+            .summary {
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            .experience-item {
+                margin-bottom: 10pt;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .project-item {
+                margin-bottom: 8pt;
+                padding: 8pt;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .job-header {
+                page-break-after: avoid;
+                margin-bottom: 6pt;
+                padding-bottom: 4pt;
+            }
+            
+            .responsibilities {
+                margin-top: 4pt;
+            }
+            
+            .responsibilities ul,
+            .project-desc ul {
+                margin-top: 3pt;
+                page-break-inside: auto;
+            }
+            
+            .responsibilities li,
+            .project-desc li {
+                margin-bottom: 2pt;
+            }
+            
+            .skills-grid {
+                page-break-inside: avoid;
+                margin-top: 6pt;
+            }
+            
+            .education-item {
+                margin-bottom: 6pt;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid;
+            }
+            
+            .job-title,
+            .project-title {
+                page-break-after: avoid;
+            }
+            
+            .company,
+            .project-meta,
+            .project-tech {
+                page-break-after: avoid;
+            }
+            
+            .section:first-of-type {
+                page-break-before: avoid;
+            }
+            
+            .section:first-of-type .section-title {
+                page-break-after: avoid;
+            }
+            
+            .section:nth-of-type(2) {
+                page-break-before: avoid;
+            }
+            
+            .section:nth-of-type(3) {
+                page-break-before: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SHAUKAT ALI</h1>
+        <div class="title">Technical Project Manager | AI/ML Engineer | Senior .NET Engineer</div>
+        <div class="contact-info">
+            <strong>Email:</strong> <a href="mailto:shaukat2667@gmail.com" style="color: #2c5aa0; text-decoration: none;">shaukat2667@gmail.com</a>
+            <span style="color: #2c5aa0;">|</span>
+            <strong>Phone:</strong> <a href="https://wa.me/923216587448" style="color: #2c5aa0; text-decoration: none;">+92 321 6587448</a>
+            <span style="color: #2c5aa0;">|</span>
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shaukat-ali-ai-developer/" style="color: #2c5aa0; text-decoration: none;">LinkedIn</a>
+            <span style="color: #2c5aa0;">|</span>
+            <strong>Location:</strong> Lahore, Pakistan
+            <span style="color: #2c5aa0;">|</span>
+            <strong>Availability:</strong> Remote / Onsite / Relocation
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="summary">
+            Results-oriented Technical Project Manager with <strong>10+ years</strong> of progressive experience delivering enterprise-scale digital transformation initiatives across government, healthcare, fintech, and SaaS sectors. Demonstrated success managing cross-functional teams of 8-15 professionals, executing AI-powered solutions and .NET enterprise applications that generated <strong>$8M+ in cost savings and revenue recovery</strong>. Deep expertise in architecting scalable systems using ASP.NET Core, Azure Cloud, Python/FastAPI, and cutting-edge AI technologies (OpenAI GPT, TensorFlow, ML models). Proven track record serving <strong>7 million+ end users</strong> and processing <strong>$50M+ monthly transactions</strong> in mission-critical environments. Successfully delivered projects for US healthcare, UK clients, and large-scale government systems while managing Agile teams, stakeholder relationships, and technical innovation. <strong>Seeking Technical Project Manager, AI/ML Engineer, or Senior .NET Engineer opportunities</strong> in remote, onsite, or hybrid roles with immediate availability.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Core Competencies</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="skill-category-title">Project & Delivery Management</div>
+                <div class="skill-list">Agile/Scrum Leadership • Cross-Functional Team Management • Stakeholder Engagement • Budget & Timeline Control • Risk Mitigation • Client Delivery Excellence</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">AI/ML & Intelligent Automation</div>
+                <div class="skill-list">OpenAI GPT Integration • TensorFlow • PyTorch • Custom ML Models • NLP • Conversational AI • Chatbot Development • Predictive Analytics</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">.NET & Enterprise Development</div>
+                <div class="skill-list">ASP.NET Core • Web API • Entity Framework • C# • Microservices Architecture • RESTful APIs • MVC • Dependency Injection</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Cloud & Infrastructure (Azure)</div>
+                <div class="skill-list">Azure Cloud Services • Azure DevOps • CI/CD Pipelines • Azure AD • Docker Containerization • Scalable Architecture • Cloud Security</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Python & Data Engineering</div>
+                <div class="skill-list">FastAPI • Django • Pandas • NumPy • Scikit-learn • XGBoost • Data Analytics • ETL Pipelines • Machine Learning</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Digital Transformation & SaaS</div>
+                <div class="skill-list">Multi-Tenant Architecture • Process Automation • System Integration • Legacy Modernization • React.js • Mobile Development • Payment Integration</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+        
+        <div class="experience-item">
+            <div class="job-header">
+                <div class="job-title">Technical Project Manager / AI Solutions Architect</div>
+                <div class="company">Confidential Technology Firm</div>
+                <div class="job-meta">Lahore, Pakistan (Remote: US & UK Clients) | May 2024 - Present (18 months)</div>
+            </div>
+            <div class="responsibilities">
+                <ul>
+                    <li><strong>Lead end-to-end delivery of 6+ AI-driven enterprise projects</strong> valued at $800K+ for international clients (US, UK), managing cross-functional teams of 8-12 professionals with <span class="highlight">100% on-time delivery and 95% client satisfaction</span></li>
+                    <li><strong>Architected AiRoom CRM</strong> for US construction company, integrating OpenAI GPT-4 for intelligent lead management and automated customer engagement, delivering <span class="highlight">35% increase in sales conversions, 50% faster response times, and $150K annual savings</span></li>
+                    <li><strong>Spearheaded SpendSail SaaS platform</strong> (ASP.NET Core, React.js, Azure) - corporate expense management system developed over <span class="highlight">14 months (Feb 2023 - Apr 2024)</span>, now serving <span class="highlight">25+ organizations with 2,000+ active users, generating $200K ARR and reducing expense processing time by 40%</span></li>
+                    <li><strong>Leading Fibber Official mobile app development</strong> (Python, FastAPI, OpenAI) - real-time audio truth analysis platform launching November 2025, with projected <span class="highlight">50K+ downloads and $15K+ MRR</span> through subscription model</li>
+                    <li><strong>Implemented Agile/Scrum methodologies</strong> across all projects, improving sprint velocity by 30%, reducing defect rates by 25%, and establishing automated CI/CD pipelines using Azure DevOps</li>
+                    <li><strong>Managed international client relationships</strong> conducting requirement workshops, sprint reviews, and executive presentations to ensure strategic alignment and exceed delivery expectations</li>
+                    <li><strong>Mentored team of 5 developers</strong> on AI/ML integration, cloud architecture best practices, and modern development frameworks, fostering technical excellence and innovation culture</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div class="job-title">Lead Software Engineer / Technical Project Manager</div>
+                <div class="company">BinaryBrix Pvt. Ltd.</div>
+                <div class="job-meta">Lahore, Pakistan | May 2022 - April 2024 (2 years)</div>
+            </div>
+            <div class="responsibilities">
+                <ul>
+                    <li><strong>Delivered Lisa AI Chatbot</strong> (Custom GPT, ASP.NET Core, FastAPI) - personality enhancement platform serving <span class="highlight">10,000+ users with 85% engagement rate</span>, leveraging NLP for personalized self-improvement recommendations</li>
+                    <li><strong>Built E-Lawyer legal automation system</strong> trained on 5,000+ legal documents using custom GPT and LLM fine-tuning, reducing legal research time by <span class="highlight">60% and saving clients $100K+ annually</span> in consultation costs</li>
+                    <li><strong>Architected enterprise microservices solutions</strong> (ASP.NET Core, Azure) handling <span class="highlight">100K+ daily API requests with 99.9% uptime</span>, implementing scalable architecture patterns and cloud-native best practices</li>
+                    <li><strong>Managed concurrent delivery of 4 enterprise projects</strong> coordinating teams of 10-15 members, ensuring quality standards, timeline adherence, and technical excellence across all initiatives</li>
+                    <li><strong>Established DevOps culture</strong> implementing Azure CI/CD pipelines, automated testing frameworks, and Docker containerization, reducing deployment time from 4 hours to 30 minutes</li>
+                    <li><strong>Awarded Best Performance 2023</strong> for exceptional project delivery, client satisfaction, and innovation in AI-driven solutions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div class="job-title">.NET Developer / Systems Integration Specialist</div>
+                <div class="company">Solara Medical Supplies (AdaptHealth Company)</div>
+                <div class="job-meta">Remote - US Healthcare | September 2020 - April 2022 (1 year 8 months)</div>
+            </div>
+            <div class="responsibilities">
+                <ul>
+                    <li><strong>Developed and maintained healthcare management system</strong> for Solara Medical Supplies, a leading US medical equipment supplier serving insurance networks and processing medical claims for durable medical equipment (DME)</li>
+                    <li><strong>Integrated multiple subsystems</strong> using ASP.NET, Web API, and SQL Server to streamline insurance contract management, equipment inventory tracking, billing workflows, and claims processing operations</li>
+                    <li><strong>Built API integrations</strong> connecting Solara's platform with major insurance providers (Medicare, Medicaid, private insurers), enabling automated eligibility verification, prior authorization, and real-time claims submission</li>
+                    <li><strong>Enhanced claims processing module</strong> reducing manual data entry by <span class="highlight">45% and improving claims approval turnaround time by 30%</span> through automated validation, error handling, and insurance rule engine implementation</li>
+                    <li><strong>Implemented secure data exchange protocols</strong> ensuring HIPAA compliance for protected health information (PHI), maintaining <span class="highlight">99.9% system uptime</span> for critical healthcare operations serving thousands of patients daily</li>
+                    <li><strong>Collaborated with US-based cross-functional teams</strong> in Agile environment, participating in sprint planning, daily standups, code reviews, and system integration testing for healthcare-critical features</li>
+                    <li><strong>Developed reporting modules</strong> providing real-time insights into inventory levels, insurance reimbursements, and operational metrics, enabling data-driven decision-making for management</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div class="job-title">Software Developer / Technical Lead</div>
+                <div class="company">Major Public Sector Utility Company (Confidential)</div>
+                <div class="job-meta">Lahore, Pakistan | June 2016 - September 2020 (4 years 3 months)</div>
+            </div>
+            <div class="responsibilities">
+                <ul>
+                    <li><strong>Developed Central Cash Collection System</strong> serving <span class="highlight">7 million customers across 20+ banks, processing $50M+ monthly transactions</span>, reducing collection delays from 7 days to real-time and saving <span class="highlight">$2M annually in operational costs</span></li>
+                    <li><strong>Built AI-powered Electricity Theft Detection System</strong> using Python ML algorithms (Random Forest, XGBoost), analyzing 5 years of consumption data for 500K+ consumers, identifying <span class="highlight">15,000+ theft cases and recovering $5M in annual revenue</span></li>
+                    <li><strong>Implemented Snap Audit System</strong> (WPF, C#, SQL Server) deployed across 50+ field offices, automating meter reading verification and reducing fraudulent activities by <span class="highlight">70%, saving $1.5M annually</span></li>
+                    <li><strong>Designed secure RESTful API infrastructure</strong> enabling seamless integration between enterprise billing systems and 200+ bank branches with 99.8% uptime and military-grade security</li>
+                    <li><strong>Led technical team of 5 developers</strong> delivering mission-critical applications for public sector operations, ensuring regulatory compliance and data security standards</li>
+                    <li><strong>Received Best App Award 2016</strong> for innovative solution significantly improving operational efficiency and revenue assurance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div class="job-title">Associate Software Engineer</div>
+                <div class="company">iSolPK</div>
+                <div class="job-meta">Lahore, Pakistan | July 2014 - May 2016 (2 years)</div>
+            </div>
+            <div class="responsibilities">
+                <ul>
+                    <li>Contributed to enterprise application development using ASP.NET MVC4, SQL Server, implementing business intelligence solutions with Crystal Reports and Jasper Reports</li>
+                    <li>Collaborated with senior engineers on process automation projects, implementing solutions that improved operational efficiency by 25%</li>
+                    <li>Developed data-driven dashboards and analytical reports enabling executive decision-making across multiple business units</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Signature Projects Portfolio</div>
+        
+        <div class="project-item">
+            <div class="project-title">AiRoom CRM | US Construction Industry Client</div>
+            <div class="project-meta">January 2024 - May 2024 | Role: Technical Project Manager & Solutions Architect</div>
+            <div class="project-tech">Technology: ASP.NET Core, React.js, OpenAI GPT-4, Azure Cloud, SQL Server, RESTful API</div>
+            <div class="project-desc">
+                <ul>
+                    <li>AI-powered customer relationship management system for construction company managing 500+ leads/month with intelligent lead scoring, automated follow-ups, and GPT-4 assisted communication</li>
+                    <li><strong>Business Impact:</strong> 35% increase in sales conversions, 50% faster response times, $150K annual cost savings through intelligent automation</li>
+                    <li><strong>Technical Innovation:</strong> Custom AI workflows for project estimation, automated proposal generation, and contract management integrated with existing ERP systems</li>
+                    <li><strong>Team Leadership:</strong> Managed 6-member development team across design, development, testing, and deployment phases with Agile methodology</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">Fibber Official | AI-Powered Audio Truth Analysis Mobile App</div>
+            <div class="project-meta">August 2024 - November 2025 (Production Launch This Week) | Role: AI Architect & Project Lead</div>
+            <div class="project-tech">Technology: Python, FastAPI, OpenAI API, Advanced NLP, React Native, Azure, In-App Purchases (iOS/Android)</div>
+            <div class="project-desc">
+                <ul>
+                    <li>Real-time audio stream analysis platform using Python NLP libraries and OpenAI for syntax/context analysis to predict truthfulness in conversations</li>
+                    <li><strong>Market Projection:</strong> 50K+ downloads in first quarter, $15K+ MRR through subscription model (freemium to premium conversion strategy)</li>
+                    <li><strong>Technical Architecture:</strong> Scalable Python backend processing 10K+ audio analyses daily with sub-3-second response time, deployed on Azure with auto-scaling</li>
+                    <li><strong>End-to-End Delivery:</strong> Complete ownership from concept, AI model training, mobile app development, payment integration, to production launch</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">SpendSail | Enterprise Expense Management SaaS Platform</div>
+            <div class="project-meta">February 2023 - April 2024 (14 months) | Role: Solution Architect & Technical Project Manager</div>
+            <div class="project-tech">Technology: ASP.NET Core, React.js, Entity Framework, Azure AD, SQL Server, Microservices, Azure Cloud</div>
+            <div class="project-desc">
+                <ul>
+                    <li>Multi-tenant SaaS platform serving 25+ organizations with 2,000+ active users, featuring custom approval workflows, real-time budget tracking, and automated expense reporting</li>
+                    <li><strong>Business Success:</strong> $200K ARR, 40% reduction in expense processing time, eliminated manual data entry and reconciliation for client organizations</li>
+                    <li><strong>Technical Excellence:</strong> Microservices architecture with Azure AD integration, ensuring enterprise-grade security, scalability, and 99.9% uptime SLA</li>
+                    <li><strong>Client Value:</strong> Seamless integration with accounting systems (QuickBooks, Xero), mobile apps for on-the-go expense submission, and executive analytics dashboards</li>
+                    <li><strong>Project Leadership:</strong> Managed complete 14-month development lifecycle from requirements gathering, architecture design, agile sprints, testing, to production deployment</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">Central Cash Collection System | Public Sector (7M Customers)</div>
+            <div class="project-meta">2018 - 2020 | Role: Lead Developer & System Architect</div>
+            <div class="project-tech">Technology: ASP.NET, Web API, SQL Server 2014, C#, Secure VPN, Enterprise Integration</div>
+            <div class="project-desc">
+                <ul>
+                    <li>Enterprise financial system serving 7 million utility customers, integrating 20+ banks with 200+ branches for real-time bill collection and payment processing</li>
+                    <li><strong>Transformational Impact:</strong> Eliminated 7-day collection delay, reduced operational costs by $2M annually, processing $50M+ monthly transactions with zero revenue leakage</li>
+                    <li><strong>Technical Complexity:</strong> Secure RESTful API infrastructure handling 100K+ daily transactions across diverse geographic regions (urban and rural coverage)</li>
+                    <li><strong>Security & Reliability:</strong> On-premises infrastructure with military-grade security, ensuring all financial transactions met regulatory compliance and audit requirements</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">AI-Powered Electricity Theft Detection System</div>
+            <div class="project-meta">March 2021 - July 2021 | Role: ML Engineer & Solution Architect</div>
+            <div class="project-tech">Technology: Python, Scikit-learn, XGBoost, Pandas, NumPy, Matplotlib, SQL Server, Advanced Analytics</div>
+            <div class="project-desc">
+                <ul>
+                    <li>Machine learning solution analyzing 5 years of consumption data for 500K+ consumers to detect electricity theft patterns with 92% accuracy</li>
+                    <li><strong>Revenue Recovery:</strong> Identified 15,000+ theft cases, recovering $5M in annual revenue for utility company and reducing non-technical losses by 35%</li>
+                    <li><strong>ML Innovation:</strong> Supervised learning models (Random Forest, XGBoost) with feature engineering on consumption patterns, payment history, and field audit data</li>
+                    <li><strong>Actionable Intelligence:</strong> Interactive dashboards providing field teams with prioritized investigation lists and predictive risk scoring for proactive intervention</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education & Qualifications</div>
+        <div class="education-item">
+            <div class="degree">Master of Science in Computer Science (MSCS)</div>
+            <div class="university">Virtual University of Pakistan, Lahore | 2016</div>
+        </div>
+        <div class="education-item">
+            <div class="degree">Master of Computer Science (MCS)</div>
+            <div class="university">Punjab University College of Information Technology (PUCIT), Lahore | 2014</div>
+        </div>
+        <div class="education-item">
+            <div class="degree">Bachelor of Science (BSc)</div>
+            <div class="university">Punjab University, Lahore | 2012</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Awards & Recognition</div>
+        <div class="project-desc">
+            <ul>
+                <li><strong>Best Performance Award 2023</strong> - BinaryBrix Pvt. Ltd. for exceptional project delivery, client satisfaction, and AI innovation</li>
+                <li><strong>Best App Award 2016</strong> - Public Sector Organization for developing high-impact enterprise solution with measurable ROI</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Languages & Additional Information</div>
+        <div class="project-desc">
+            <ul>
+                <li><strong>Languages:</strong> English (Professional Working Proficiency) | Urdu (Native)</li>
+                <li><strong>Work Authorization:</strong> Pakistani National with valid passport, open to remote work, onsite opportunities, or international relocation</li>
+                <li><strong>Notice Period:</strong> Immediate to 30 days (negotiable based on project handover requirements)</li>
+                <li><strong>Work Preferences:</strong> Available for remote, hybrid, or onsite positions. Open to relocation for the right opportunity</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
