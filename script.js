@@ -94,31 +94,75 @@ document.addEventListener('DOMContentLoaded', () => {
 // Form submission handling
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
+    const statusMessage = document.createElement('p');
+    statusMessage.className = 'form-status';
+    contactForm.appendChild(statusMessage);
+
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         // Get form data
         const formData = new FormData(this);
+
+        const validationErrors = validateContactForm(formData);
+        if (validationErrors.length) {
+            statusMessage.textContent = validationErrors.join(' ');
+            statusMessage.classList.remove('success');
+            statusMessage.classList.add('error');
+            return;
+        }
         
-        // You can integrate with Formspree, EmailJS, or your own backend
-        // For now, we'll just show an alert
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
-        
-        // Uncomment below if using Formspree:
-        // fetch(this.action, {
-        //     method: 'POST',
-        //     body: formData,
-        //     headers: {
-        //         'Accept': 'application/json'
-        //     }
-        // }).then(() => {
-        //     alert('Thank you for your message! I will get back to you soon.');
-        //     this.reset();
-        // }).catch(error => {
-        //     alert('There was an error sending your message. Please try again.');
-        // });
+        statusMessage.textContent = 'Sending...';
+        statusMessage.classList.remove('error', 'success');
+
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                statusMessage.textContent = 'Thank you! Your message has been sent.';
+                statusMessage.classList.add('success');
+                this.reset();
+            } else {
+                return response.json().then(data => {
+                    throw new Error(data.errors?.map(error => error.message).join(', ') || 'Failed to send message.');
+                });
+            }
+        }).catch(error => {
+            statusMessage.textContent = error.message || 'There was an error sending your message. Please try again.';
+            statusMessage.classList.add('error');
+        });
     });
+}
+
+function validateContactForm(formData) {
+    const errors = [];
+    const name = (formData.get('name') || '').trim();
+    const email = (formData.get('email') || '').trim();
+    const subject = (formData.get('subject') || '').trim();
+    const message = (formData.get('message') || '').trim();
+
+    if (name.length < 2) {
+        errors.push('Please enter your full name.');
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        errors.push('Please enter a valid email address.');
+    }
+
+    if (subject.length < 3) {
+        errors.push('Subject must be at least 3 characters.');
+    }
+
+    if (message.length < 10) {
+        errors.push('Message must be at least 10 characters.');
+    }
+
+    return errors;
 }
 
 // Typing effect for hero title (optional enhancement)
@@ -141,14 +185,16 @@ function typeWriter(element, text, speed = 100) {
 function animateCounter(element, target, duration = 2000) {
     let start = 0;
     const increment = target / (duration / 16);
+    const prefix = element.dataset.prefix || '';
+    const suffix = element.dataset.suffix || '';
     
     function updateCounter() {
         start += increment;
         if (start < target) {
-            element.textContent = Math.floor(start) + (element.textContent.includes('+') ? '+' : '');
+            element.textContent = `${prefix}${Math.floor(start)}${suffix}`;
             requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = target + (element.textContent.includes('+') ? '+' : '');
+            element.textContent = `${prefix}${target}${suffix}`;
         }
     }
     
@@ -159,13 +205,12 @@ function animateCounter(element, target, duration = 2000) {
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-item h3');
+            const statNumbers = entry.target.querySelectorAll('.stat-number');
             statNumbers.forEach(stat => {
-                const text = stat.textContent;
-                const number = parseInt(text.replace(/\D/g, ''));
-                if (number && !stat.classList.contains('animated')) {
+                const target = parseInt(stat.dataset.target, 10);
+                if (!isNaN(target) && !stat.classList.contains('animated')) {
                     stat.classList.add('animated');
-                    animateCounter(stat, number, 2000);
+                    animateCounter(stat, target, 2000);
                 }
             });
             statsObserver.unobserve(entry.target);
