@@ -29,6 +29,22 @@ body {
     overflow-x: hidden;
 }
 
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 8px 16px;
+    z-index: 10000;
+    border-radius: 4px;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
